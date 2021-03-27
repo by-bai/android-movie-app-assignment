@@ -1,14 +1,16 @@
-package com.my.movieapp;
+package com.my.movieapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.my.movieapp.R;
+
+public class DiscoverMoviesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_discover_movies);
     }
 }
