@@ -2,7 +2,7 @@ package com.my.movieapp.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Movie {
+public class Movies {
 
     @SerializedName("id")
     private int movieID;
@@ -11,7 +11,7 @@ public class Movie {
     private String movieTitle;
 
     @SerializedName("popularity")
-    private String moviePopularity;
+    private double moviePopularity;
 
     @SerializedName("poster_path")
     private String moviePoster;
@@ -32,11 +32,11 @@ public class Movie {
         this.movieTitle = movieTitle;
     }
 
-    public String getMoviePopularity() {
+    public Double getMoviePopularity() {
         return moviePopularity;
     }
 
-    public void setMoviePopularity(String moviePopularity) {
+    public void setMoviePopularity(Double moviePopularity) {
         this.moviePopularity = moviePopularity;
     }
 

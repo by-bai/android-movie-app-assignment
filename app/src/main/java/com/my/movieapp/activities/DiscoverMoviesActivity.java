@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.my.movieapp.R;
-import com.my.movieapp.model.Movie;
+import com.my.movieapp.model.Movies;
 import com.my.movieapp.model.MoviesResponse;
 import com.my.movieapp.networking.ApiClient;
 
@@ -18,7 +18,8 @@ import retrofit2.Response;
 
 public class DiscoverMoviesActivity extends AppCompatActivity {
 
-    private List<Movie> movieList;
+    private List<Movies> moviesList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,27 +36,19 @@ public class DiscoverMoviesActivity extends AppCompatActivity {
         getMovies.enqueue(new Callback<MoviesResponse>() {
             @Override
             public void onResponse(Call<MoviesResponse> call, Response<MoviesResponse> response) {
-                Log.d("getMovies", "Request why fail" + response.message());
+
                 if (response.isSuccessful()) {
                     Log.d("getMovies", "Request success");
                     Log.d("getMovies", "Request body: " + response.body());
                     Log.d("getMovies", "Request body: " + response.body().getResults());
 
-                    List<Movie> movies = response.body().getResults();
-                    Log.d("getMovies", movies + "");
-//
-                    for (int i=0; i<movies.size(); i++) {
-                        Log.d("getMovies", "Request body: " + movies.get(i).getMoviePopularity());
+                    moviesList = response.body().getResults();
+                    Log.d("getMovies", moviesList + "");
+
+                    for (int i=0; i<moviesList.size(); i++) {
+                        Log.d("getMovies", "Request body: " + moviesList.get(i).getMoviePopularity());
                     }
 
-
-//                    try {
-//                        JSONObject jsonObject = new JSONObject(response.body());
-//                        JSONArray jsonArray = jsonObject.getJSONArray("results");
-//                        Log.d("getMovies", "parsing" + jsonArray);
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
 
                 }
             }

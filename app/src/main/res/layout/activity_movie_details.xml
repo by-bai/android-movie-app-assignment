@@ -14,15 +14,15 @@
         android:layout_margin="@dimen/_4sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/movie_details"
-        app:layout_constraintVertical_bias="0.215">
+        app:layout_constraintVertical_bias="0.044">
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="358dp"
+            android:layout_height="287dp"
             android:layout_marginStart="42dp"
             android:layout_marginLeft="42dp"
             android:layout_marginTop="17dp"
@@ -32,10 +32,9 @@
             android:contentDescription="TODO"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/details" />
 
         <TextView
@@ -85,7 +84,7 @@
 
         <TextView
             android:id="@+id/movie_language_text"
-            android:layout_width="wrap_content"
+            android:layout_width="283dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:layout_marginBottom="24dp"
@@ -99,25 +98,24 @@
 
         <TextView
             android:id="@+id/movie_genre_text"
-            android:layout_width="wrap_content"
+            android:layout_width="283dp"
             android:layout_height="wrap_content"
             android:text="TextView"
             app:layout_constraintBottom_toTopOf="@+id/movie_duration"
             app:layout_constraintEnd_toEndOf="@+id/movie_genre"
-            app:layout_constraintHorizontal_bias="0.104"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/movie_genre"
-            app:layout_constraintTop_toBottomOf="@+id/movie_genre"
-            app:layout_constraintVertical_bias="0.617" />
+            app:layout_constraintTop_toBottomOf="@+id/movie_genre" />
 
         <TextView
             android:id="@+id/movie_duration_text"
-            android:layout_width="wrap_content"
+            android:layout_width="278dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="@+id/imageView4"
             app:layout_constraintEnd_toEndOf="@+id/movie_duration"
-            app:layout_constraintHorizontal_bias="0.081"
+            app:layout_constraintHorizontal_bias="0.005"
             app:layout_constraintStart_toStartOf="@+id/movie_duration"
             app:layout_constraintTop_toBottomOf="@+id/movie_duration"
             app:layout_constraintVertical_bias="0.0" />
@@ -129,18 +127,17 @@
         android:layout_height="172dp"
         android:layout_gravity="center_horizontal"
         android:layout_margin="@dimen/_4sdp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
         android:layout_marginTop="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/movie_details_header"
-        app:layout_constraintVertical_bias="0.076">
+        app:layout_constraintVertical_bias="0.069">
 
         <ImageView
             android:id="@+id/movie_details2_background"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="358dp"
+            android:layout_height="152dp"
             android:layout_marginStart="42dp"
             android:layout_marginLeft="42dp"
             android:layout_marginTop="17dp"
@@ -170,26 +167,28 @@
 
         <TextView
             android:id="@+id/movie_sypnosis_text"
-            android:layout_width="wrap_content"
+            android:layout_width="296dp"
             android:layout_height="wrap_content"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="@+id/movie_details2_background"
             app:layout_constraintEnd_toEndOf="@+id/movie_sypnosis"
-            app:layout_constraintHorizontal_bias="0.184"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/movie_sypnosis"
             app:layout_constraintTop_toTopOf="@+id/movie_sypnosis"
-            app:layout_constraintVertical_bias="0.433" />
+            app:layout_constraintVertical_bias="0.427" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/button"
+        android:id="@+id/book_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/movie_details2"
-        app:srcCompat="@drawable/button" />
+        app:layout_constraintVertical_bias="0.396"
+        app:srcCompat="@drawable/book_button" />
 
     <TextView
         android:id="@+id/movie_details_header"
@@ -204,6 +203,18 @@
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintVertical_bias="0.048" />
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="24dp"
+        android:layout_height="34dp"
+        app:layout_constraintBottom_toTopOf="@+id/movie_details"
+        app:layout_constraintEnd_toStartOf="@+id/movie_details_header"
+        app:layout_constraintHorizontal_bias="0.317"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.47"
+        app:srcCompat="@drawable/back_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

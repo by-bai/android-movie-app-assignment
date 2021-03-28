@@ -2,20 +2,28 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.my.movieapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MovieApp">
-        <activity android:name=".activities.DiscoverMoviesActivity">
+        android:theme="@style/Theme.MovieApp.NoActionBar">
+
+        <activity android:name=".activities.DiscoverMoviesActivity"/>
+        <activity android:name=".activities.WebViewActivity"/>
+
+
+        <activity android:name=".activities.MovieDetailsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
