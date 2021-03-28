@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieApp.NoActionBar">
 
-        <activity android:name=".activities.DiscoverMoviesActivity"/>
+        <activity android:name=".activities.MovieListActivity"/>
         <activity android:name=".activities.WebViewActivity"/>
 
 

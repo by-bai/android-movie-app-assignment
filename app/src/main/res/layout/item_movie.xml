@@ -97,8 +97,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginStart="34dp"
-            android:layout_marginLeft="59dp"
-            android:layout_marginTop="88dp"
+            android:layout_marginLeft="39dp"
+            android:layout_marginTop="78dp"
             android:layout_toRightOf="@+id/movie_poster"
             android:fontFamily="@font/rubik_regular"
             android:text="Line 2"
@@ -106,7 +106,7 @@
             android:textSize="11sp" />
 
         <TextView
-            android:id="@+id/movie_rating2"
+            android:id="@+id/movie_details_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
