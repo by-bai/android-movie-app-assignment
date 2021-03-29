@@ -21,19 +21,13 @@ public class ApiClient {
     public static final String RELEASE_DATE = "2016-12-31";
     public static final String SORT_BY = "release_date.desc";
 
-//    public static final int FIRST_PAGE = 1;
-    public static final int POST_PER_PAGE = 20;
-
-    public static Retrofit retrofit = null;
-
     private static Retrofit getClient(){
 
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
-        OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build();
 
-        okHttpClient.interceptors().add(new Interceptor() {
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
             @NotNull
             @Override
             public Response intercept(@NotNull Chain chain) throws IOException {
@@ -43,9 +37,11 @@ public class ApiClient {
                         .addQueryParameter("sort_by", SORT_BY).build();
                 request = request.newBuilder().url(url).build();
                 return chain.proceed(request);
-
             }
-        });
+        })
+                .addInterceptor(httpLoggingInterceptor).build();
+
+
 
         Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
@@ -73,12 +69,12 @@ public class ApiClient {
         return retrofit;
     }
 
-    public static MovieApi movieApi(){
+    public static MovieApi getService(){
         MovieApi movieApi = getClient().create(MovieApi.class);
         return movieApi;
     }
 
-    public static MovieApi movieApi2(){
+    public static MovieApi getService2(){
         MovieApi movieApi2 = getClient2().create(MovieApi.class);
         return movieApi2;
     }

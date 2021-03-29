@@ -30,7 +30,7 @@ public class MovieItemViewHolder extends RecyclerView.ViewHolder {
     ImageView moviePoster;
 
     @BindView(R.id.movie_details_button)
-    ImageView movieDetailsButton;
+    TextView movieDetailsButton;
 
 
     private MovieItemViewHolder(View itemView) {

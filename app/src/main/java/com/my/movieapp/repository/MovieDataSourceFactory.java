@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.paging.DataSource;
 
 import com.my.movieapp.model.Movies;
+import com.my.movieapp.networking.ApiClient;
 
 import io.reactivex.disposables.CompositeDisposable;
 
@@ -24,7 +25,7 @@ public class MovieDataSourceFactory extends DataSource.Factory<Integer, Movies> 
 
     @Override
     public DataSource<Integer, Movies> create() {
-        MovieDataSource movieDataSource = new MovieDataSource(compositeDisposable);
+        MovieDataSource movieDataSource = new MovieDataSource(ApiClient.getService(), compositeDisposable);
         movieDataSourceLiveData.postValue(movieDataSource);
         return movieDataSource;
     }

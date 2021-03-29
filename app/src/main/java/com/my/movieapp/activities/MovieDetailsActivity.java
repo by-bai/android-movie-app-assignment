@@ -54,7 +54,7 @@ public class MovieDetailsActivity extends AppCompatActivity implements View.OnCl
 
     private void getMovieDetails() {
 
-        Call<MovieDetails> getMovies = ApiClient.movieApi2().getMovieDetails(328111, "328c283cd27bd1877d9080ccb1604c91");
+        Call<MovieDetails> getMovies = ApiClient.getService2().getMovieDetails(328111, "328c283cd27bd1877d9080ccb1604c91");
 
         getMovies.enqueue(new Callback<MovieDetails>() {
             @Override

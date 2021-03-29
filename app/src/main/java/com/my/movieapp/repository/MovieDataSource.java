@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.paging.PageKeyedDataSource;
 
 import com.my.movieapp.model.Movies;
+import com.my.movieapp.networking.ApiClient;
 import com.my.movieapp.networking.MovieApi;
 
 import io.reactivex.disposables.CompositeDisposable;
@@ -21,7 +22,8 @@ public class MovieDataSource extends PageKeyedDataSource<Integer, Movies> {
     private CompositeDisposable compositeDisposable;
     private MutableLiveData<NetworkState> networkState = new MutableLiveData<>();
 
-    MovieDataSource(CompositeDisposable compositeDisposable) {
+    MovieDataSource(MovieApi movieApi, CompositeDisposable compositeDisposable) {
+        this.movieApi = movieApi;
         this.compositeDisposable = compositeDisposable;
     }
 
