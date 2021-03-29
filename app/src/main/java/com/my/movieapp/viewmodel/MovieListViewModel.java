@@ -47,9 +47,14 @@ public class MovieListViewModel extends AndroidViewModel {
         return Transformations.switchMap(movieDataSourceFactory.getMovieDataSourceLiveData(), MovieDataSource::getNetworkState);
     }
 
-//    @Override
-//    protected void onCleared() {
-//        super.onCleared();
-//        compositeDisposable.dispose();
-//    }
+
+    public void refresh() {
+        movieDataSourceFactory.getMovieDataSourceLiveData().getValue().invalidate();
+    }
+
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+        compositeDisposable.dispose();
+    }
 }

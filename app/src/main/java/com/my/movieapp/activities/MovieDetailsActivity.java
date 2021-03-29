@@ -59,7 +59,7 @@ public class MovieDetailsActivity extends AppCompatActivity implements View.OnCl
         backButton.setOnClickListener(this);
 
         //get clicked movie id from previous activity
-        Log.d("movie id", getIntent().getStringExtra("id")+"");
+        Log.d("movie id", "retrieved movie id = "+ getIntent().getStringExtra("id")+"");
         movieID = Integer.parseInt(getIntent().getStringExtra("id"));
 
         //view model

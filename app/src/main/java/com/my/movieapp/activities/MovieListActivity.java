@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.LinearLayout;
 
 import com.my.movieapp.R;
@@ -20,6 +22,7 @@ public class MovieListActivity extends AppCompatActivity {
     private MovieListViewModel movieListViewModel;
     private MovieListAdapter movieListAdapter;
     private RecyclerView recyclerView;
+    private SwipeRefreshLayout movieListRefreshLayout;
 
 
     @Override
@@ -27,12 +30,14 @@ public class MovieListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discover_movies);
 
-        recyclerView = (RecyclerView) findViewById(R.id.movie_recycler);
+        recyclerView = findViewById(R.id.movie_recycler);
+        movieListRefreshLayout = findViewById(R.id.swipe_refresh);
         movieListViewModel = new ViewModelProvider(this,
                 new ViewModelProvider.AndroidViewModelFactory(getApplication())).get(MovieListViewModel.class);
 //        movieListViewModel = new ViewModelProvider(this).get(MovieListViewModel.class);
         movieListViewModel.init();
         initAdapter();
+        initSwipeToRefresh();
     }
 
     private void initAdapter() {
@@ -43,6 +48,20 @@ public class MovieListActivity extends AppCompatActivity {
         movieListViewModel.movieList.observe(this, movieListAdapter::submitList);
         movieListViewModel.getNetworkState().observe(this, movieListAdapter::setNetworkState);
 
+    }
+
+    private void initSwipeToRefresh() {
+        movieListRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                movieListViewModel.refresh();
+                movieListAdapter.notifyDataSetChanged();
+                Log.d("data refreshed", "data refreshed true");
+                movieListRefreshLayout.setRefreshing(false);
+            }
+        });
+//        movieListRefreshLayout.setOnRefreshListener(() -> movieListViewModel.refresh());
+//        movieListAdapter.notifyDataSetChanged();
     }
 
 }
