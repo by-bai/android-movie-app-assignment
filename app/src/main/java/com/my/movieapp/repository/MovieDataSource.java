@@ -61,7 +61,7 @@ public class MovieDataSource extends PageKeyedDataSource<Integer, Movies> {
         compositeDisposable.add(movieApi.getMovies(params.key)
                 .subscribe(movies -> {
                             if(movies.getTotalPages() >= params.key) {
-                                callback.onResult(movies.getResults(),FIRST_PAGE + 1);
+                                callback.onResult(movies.getResults(),params.key + 1);
                                 networkState.postValue(NetworkState.LOADED);
                             } else {
                                 networkState.postValue(NetworkState.ENDOFLIST);

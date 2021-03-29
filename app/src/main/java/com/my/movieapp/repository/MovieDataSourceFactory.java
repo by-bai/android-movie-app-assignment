@@ -25,7 +25,7 @@ public class MovieDataSourceFactory extends DataSource.Factory<Integer, Movies> 
 
     @Override
     public DataSource<Integer, Movies> create() {
-        MovieDataSource movieDataSource = new MovieDataSource(ApiClient.getService(), compositeDisposable);
+        MovieDataSource movieDataSource = new MovieDataSource(ApiClient.getMoviesService(), compositeDisposable);
         movieDataSourceLiveData.postValue(movieDataSource);
         return movieDataSource;
     }

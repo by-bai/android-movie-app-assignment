@@ -49,7 +49,8 @@ public class MovieItemViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(movieTitle.getContext(), MovieDetailsActivity.class);
-                intent.putExtra("id", movies.getMovieID());
+                intent.putExtra("id", String.valueOf(movies.getMovieID()));
+
                 movieTitle.getContext().startActivity(intent);
             }
         });

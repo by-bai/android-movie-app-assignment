@@ -167,15 +167,15 @@
 
         <TextView
             android:id="@+id/movie_sypnosis_text"
-            android:layout_width="296dp"
-            android:layout_height="wrap_content"
+            android:layout_width="325dp"
+            android:layout_height="90dp"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="@+id/movie_details2_background"
             app:layout_constraintEnd_toEndOf="@+id/movie_sypnosis"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/movie_sypnosis"
             app:layout_constraintTop_toTopOf="@+id/movie_sypnosis"
-            app:layout_constraintVertical_bias="0.427" />
+            app:layout_constraintVertical_bias="0.847" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView

@@ -12,17 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieApp.NoActionBar">
 
-        <activity android:name=".activities.MovieListActivity"/>
-        <activity android:name=".activities.WebViewActivity"/>
-
-
-        <activity android:name=".activities.MovieDetailsActivity">
+        <activity android:name=".activities.MovieListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.WebViewActivity"/>
+
+
+        <activity android:name=".activities.MovieDetailsActivity"/>
 
     </application>
 

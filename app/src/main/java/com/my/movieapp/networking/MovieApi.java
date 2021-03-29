@@ -15,7 +15,6 @@ public interface MovieApi {
     Single<MoviesResponse> getMovies (@Query("page") int page);
 
     @GET("movie/{id}")
-    Call<MovieDetails> getMovieDetails (@Path("id")int movieID,
-                                        @Query("api_key") String key);
+    Call<MovieDetails> getMovieDetails (@Path("id")int movieID);
 
 }
